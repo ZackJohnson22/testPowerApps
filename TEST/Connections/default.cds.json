@@ -143,6 +143,14 @@
       "ComponentName": "CustomControl",
       "Identifier": "cat_PowerCAT.Calendar",
       "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Breadcrumb",
+      "IdentifierType": 0
     }
   ],
   "dataSources": {},

@@ -12498,3 +12498,11 @@
         Y: =810
         ZIndex: =52
 
+    "Breadcrumb2 As 'Fluent Breadcrumb (1.0.8)'.pcfdataset":
+        DisplayMode: =DisplayMode.Edit
+        Height: =200
+        Width: =200
+        X: =290
+        Y: =355
+        ZIndex: =53
+
