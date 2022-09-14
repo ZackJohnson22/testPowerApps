@@ -1,0 +1,37 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": true,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "TagListBasic",
+    "TemplateGuid": "c4f9e6bec49f4e5b8d70da389438c1f7"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "ComponentHeight",
+      "Hidden": true,
+      "Name": "ComponentHeight",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "ComponentHeight",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "637987857045794733",
+  "Name": "c4f9e6bec49f4e5b8d70da389438c1f7",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "093fde4fc60748fe9210bd7a41502b6c",
+  "Version": "637867004815322049"
+}

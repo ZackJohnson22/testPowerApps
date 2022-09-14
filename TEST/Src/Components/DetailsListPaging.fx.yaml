@@ -1,0 +1,155 @@
+DetailsListPaging As CanvasComponent:
+    ComponentHeight: =If(pivotAppCode_26.Selected.ItemKey="code",htmlCode_26.Y+htmlCode_26.Height,500)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Self.ComponentHeight
+    OnReset: =Set(ctxSortAsc, true);
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =25
+
+    lblExampleTitle_26 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =varTheme.palette.neutralPrimaryAlt
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =varTheme.fontSizes.m
+        Text: ="Details List Paging & Sorting"
+        Width: =630
+        Y: =22
+        ZIndex: =2
+
+    line_18 As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =varTheme.palette.neutralTertiary
+        Height: =1
+        Width: =Parent.Width
+        Y: =68
+        ZIndex: =4
+
+    htmlCode_26 As htmlViewer:
+        AutoHeight: =true
+        BorderColor: =varTheme.palette.neutralPrimary
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        Color: =varTheme.palette.neutralPrimary
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Courier New'
+        Height: =115
+        HtmlText: =""
+        Size: =10
+        Visible: =pivotAppCode_26.Selected.ItemKey="code"
+        Width: =Parent.Width
+        Y: =68
+        ZIndex: =5
+
+    Group24 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        htmlText_11 As htmlViewer:
+            AutoHeight: =true
+            Color: =varTheme.palette.neutralPrimary
+            Font: =Font.'Segoe UI'
+            HtmlText: ="Manual Sorting is supported outside of the component to allow for custom connector support and local collection sorting when not connected to a Dataverse connection."
+            PaddingBottom: =0
+            PaddingLeft: =8
+            PaddingRight: =8
+            PaddingTop: =0
+            Size: =varTheme.fontSizes.s
+            Visible: =pivotAppCode_26.Selected.ItemKey="app"
+            Width: =Parent.Width
+            Y: =78
+            ZIndex: =16
+
+        conGrid As groupContainer.manualLayoutContainer:
+            Height: =350
+            Visible: =pivotAppCode_26.Selected.ItemKey="app"
+            Width: =Parent.Width
+            Y: =120
+            ZIndex: =18
+
+            txtSeachAccount As text:
+                AccessibleLabel: ="Search for accounts"
+                BorderColor: =RGBA(128,128,128,1)
+                Color: =RGBA(66,66,66,1)
+                Default: =""
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderColor: =RGBA(0,120,212,1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HintText: ="Search for accounts"
+                HoverBorderColor: =RGBA(66,66,66,1)
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =
+                PaddingLeft: =5
+                RadiusBottomLeft: =2
+                RadiusBottomRight: =2
+                RadiusTopLeft: =2
+                RadiusTopRight: =2
+                Size: =10.5
+                Visible: =pivotAppCode_26.Selected.ItemKey="app"
+                Width: =200
+                X: =Parent.Width-Self.Width-8
+                Y: =8
+                ZIndex: =4
+
+            lblRecordCount As label:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =varTheme.palette.neutralPrimary
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                Height: =32
+                Size: =varTheme.fontSizes.xs
+                Text: =If(FluentDetailsListAccounts.TotalRecords>-1, FluentDetailsListAccounts.TotalRecords & " record(s)  ") & Text(CountRows(FluentDetailsListAccounts.SelectedItems)+0) & " selected" 
+                Visible: =pivotAppCode_26.Selected.ItemKey="app"
+                Width: =188
+                X: =ElevationAccounts.X
+                Y: =Parent.Height-Self.Height-8
+                ZIndex: =5
+
+            conPagingControls As groupContainer.manualLayoutContainer:
+                Height: =31
+                Visible: =pivotAppCode_26.Selected.ItemKey="app"
+                Width: =180
+                X: =ElevationAccounts.Width-Self.Width
+                Y: =Parent.Height-Self.Height-8
+                ZIndex: =6
+
+                lblPageCount As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =varTheme.palette.neutralPrimary
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =31
+                    Size: =varTheme.fontSizes.xs
+                    Text: ="Page " & FluentDetailsListAccounts.PageNumber
+                    Width: =84
+                    X: =64
+                    ZIndex: =3
+
+            lblNoRecords As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =varTheme.palette.neutralPrimary
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =23
+                Size: =varTheme.fontSizes.xs
+                Text: ="No records found"
+                Visible: =FluentDetailsListAccounts.TotalRecords=0
+                Width: =188
+                X: =FluentDetailsListAccounts.Width/2-Self.Width/2+FluentDetailsListAccounts.X
+                Y: =100
+                ZIndex: =7
+

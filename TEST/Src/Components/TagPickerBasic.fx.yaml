@@ -1,0 +1,241 @@
+TagPickerBasic As CanvasComponent:
+    ComponentHeight: =If(pivotAppCode_17.Selected.ItemKey="code",htmlCode_17.Y+htmlCode_17.Height,400)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Self.ComponentHeight
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =16
+
+    lblExampleTitle_17 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =varTheme.palette.neutralPrimaryAlt
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =varTheme.fontSizes.m
+        Text: ="Tag Picker Basic"
+        Width: =630
+        Y: =2
+        ZIndex: =1
+
+    pivotline_17 As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =varTheme.palette.neutralTertiary
+        Height: =1
+        Width: =Parent.Width
+        Y: =48
+        ZIndex: =3
+
+    htmlCode_17 As htmlViewer:
+        AutoHeight: =true
+        BorderColor: =varTheme.palette.neutralPrimary
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        Color: =varTheme.palette.neutralPrimary
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Courier New'
+        Height: =115
+        HtmlText: |-
+            ="<pre class=""hljs"" style=""display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);""><span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""PickerTagsSimple As 'Fluent Picker'.pcfdataset""</span>:
+                AllowFreeText: =chkAllowFreeText.Checked
+                DisplayMode: =DisplayMode.Edit
+                <span class=""hljs-built_in"" style=""color: rgb(57, 115, 0);"">Error</span>: =CountRows(colSimpleTags)&gt;=<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">5</span>
+                Height: =PickerTagsSimple.AutoHeight
+                HintText: =If(chkAllowFreeText.Checked,<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Search for tags or enter a new one""</span>,<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Search for tags""</span>)
+                InputEvent: =varFocusTabEvent
+                Items: =colSimpleTags
+                LayoutMinHeight: =<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">200</span>
+                LayoutMinWidth: =<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">100</span>
+                MinimumSearchTermLength: =<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">0</span>
+                OnChange: |-
+                    =If(Self.TagEvent = <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Add""</span>,
+                        With({
+                            selectedItem: LookUp(colComponentTypes,Self.TagDisplayName = name),
+                            alreadyAdded:!IsBlank(LookUp(colSimpleTags,Lower(Self.TagDisplayName) = Lower(name)))
+                            },
+                            If(!alreadyAdded,
+                                If(chkAllowFreeText.Checked,
+                                    <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Allow free text tags</span>
+                                    If(IsBlank(selectedItem),
+                                        <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Free text item</span>
+                                        Collect(colSimpleTags, {name: Self.TagDisplayName}),
+                                        <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Selected item</span>
+                                        Collect(colSimpleTags,selectedItem)
+                                    );
+                                    
+                                ,
+                                    <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Do not allow free text tags</span>
+                                    Collect( colSimpleTags,LookUp(colComponentTypes,Self.TagDisplayName = name))
+                                );
+                            );
+                        );
+                    );
+                        
+                    
+                    If(Self.TagEvent = <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Remove""</span>,
+                        RemoveIf(colSimpleTags, name = Text(Self.TagDisplayName))
+                    );
+                Suggestions_Items: =colComponentTypes
+                SuggestionsDisplayName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                SuggestionsIconColor: =
+                SuggestionsIconName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon""</span>
+                SuggestionsKey: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                TagsDisplayName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                TagsIconName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon""</span>
+                TagsKey: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                Theme: =varTheme.themeJSON
+            
+                Icon3_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon""</span>
+                    FieldName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon""</span>
+                    FieldVariantName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""textualColumn""</span>
+            
+                name1_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                    FieldName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>
+                    FieldVariantName: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""textualColumn""</span>
+            
+            
+            btnSetfocusTags As Button:
+                ButtonType: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">''</span><span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">'Microsoft.CoreControls.Button.ButtonType'</span><span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">''</span>.Standard
+                OnSelect: =<span class=""hljs-built_in"" style=""color: rgb(57, 115, 0);"">Set</span>(varFocusTabEvent,<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""SetFocus""</span> &amp; Text(Rand()));
+                Text: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Set Focus""</span>
+            
+            <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""chkAllowFreeText As 'Check box'""</span>:
+                Checked: =<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                Label: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Allow free text tags""</span>
+            
+            
+            
+            
+            </pre>"
+        Size: =10
+        Visible: =pivotAppCode_17.Selected.ItemKey="code"
+        Width: =Parent.Width
+        Y: =45
+        ZIndex: =4
+
+    stackTagPickerRoot As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height-Self.Y
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        Visible: =pivotAppCode_17.Selected.ItemKey="app"
+        Width: =Parent.Width-Self.X*2
+        X: =15
+        Y: =60
+        ZIndex: =6
+
+        stackTagPickerLeft As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =302
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =8
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width-Self.X*2
+            X: =33
+            Y: =65
+            ZIndex: =1
+
+            lblTags As label:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =varTheme.palette.neutralPrimary
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =24
+                Size: =varTheme.fontSizes.s
+                Text: |-
+                    ="Tags:"
+                Width: =Parent.Width-Self.X*2
+                X: =16
+                Y: =62
+                ZIndex: =1
+
+            Container6 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =32
+                LayoutGap: =8
+                LayoutMinHeight: =100
+                LayoutMinWidth: =10
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =3
+
+                btnSetfocusTags As Button:
+                    AccessibleLabel: ="Set focus"
+                    BorderRadius: =1
+                    BorderStyle: =BorderStyle.Solid
+                    BorderThickness: =1
+                    ButtonType: ='''Microsoft.CoreControls.Button.ButtonType'''.Standard
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Set(varFocusTabEvent,"SetFocus" & Text(Rand()));
+                    Text: ="Set Focus"
+                    Visible: =true
+                    Width: =120
+                    X: =108
+                    Y: =204
+                    ZIndex: =1
+
+                "chkAllowFreeText As 'Check box'":
+                    AccessibleLabel: ="Allow free text tags"
+                    Checked: =false
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Label: ="Allow free text tags"
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =160
+                    OnChange: =
+                    Visible: =true
+                    Width: =160
+                    X: =108
+                    Y: =264
+                    ZIndex: =2
+
+            lblSelected_27 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =varTheme.palette.neutralPrimary
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =24
+                Size: =varTheme.fontSizes.s
+                Text: ="The picker will show an error state when 5 tags have been added. A maximum of 10 tags can be added"
+                Width: =Parent.Width-Self.X*2
+                X: =16
+                Y: =62
+                ZIndex: =4
+
+        stackTagPickerRight As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            lblSelectedTags As label:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =varTheme.palette.neutralPrimary
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =24
+                Size: =varTheme.fontSizes.s
+                Text: |-
+                    ="Selected Tags:"
+                Width: =Parent.Width-Self.X*2
+                X: =16
+                Y: =62
+                ZIndex: =1
+

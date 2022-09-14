@@ -1,0 +1,46 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": true,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "MultiHtmlSectionText",
+    "TemplateGuid": "e0ff062da4b64f65be50bc76acb26782"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Title",
+      "Hidden": false,
+      "Name": "Title",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "Title",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Sections",
+      "Hidden": false,
+      "Name": "Sections",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "Sections",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"SectionHtml\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Title\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "637987857045820396",
+  "Name": "e0ff062da4b64f65be50bc76acb26782",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "cfa27b86aa39463ba466c58c6bf479e6",
+  "Version": "637855821332038088"
+}

@@ -1,0 +1,270 @@
+DetailsListLayout As CanvasComponent:
+    ComponentHeight: =If(pivotAppCode_25.Selected.ItemKey="code",htmlCode_25.Y+htmlCode_25.Height,430)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Self.ComponentHeight
+    OnReset: |-
+        =
+        ClearCollect(
+            colLayoutRows,
+            {
+                id: "row1",
+                name: "",
+                heading: "Lorem ipsum dolor sit amet.",
+                tag: "Custom Pages",
+                review: "",
+                iconimage:"icon:WebComponents",
+                score:"Score 87%",
+                TagColor:LookUp(colTags,DisplayName="Teal").BackgroundColor,
+                TagBorderColor:LookUp(colTags,DisplayName="Teal").BackgroundColor,
+                selectable:false
+            },
+            {
+                id: "row2",
+                name: "Sed a sollicitudin nisi.",
+                review: "Review",
+                selectable:true
+            },
+            {
+                id: "row3",
+                name: "Suspendisse eu turpis a augue ullamcorper aliquam.",
+                review: "Review",
+                selectable:true
+            },
+            {
+                id: "row4",
+                heading: "Pellentesque pharetra lectus eget ligula maximus maximus.",
+                tag: "Power App",
+                review: "",
+                iconimage:"icon:WebComponents",
+                score:"Score 87%",
+                TagColor:LookUp(colTags,DisplayName="Marigold").BackgroundColor,
+                TagBorderColor:LookUp(colTags,DisplayName="Marigold").BackgroundColor,
+                selectable:false
+            },
+            {
+                id: "row5",
+                name: "Nunc non posuere leo.",
+                review: "Review",
+                selectable:true
+            },
+            {
+                id: "row6",
+                heading: "Fusce vitae nulla nec mi ultricies tempus.",
+                tag: "Power App",
+                iconimage: "icon:WebComponents",
+                score:"Score 87%",
+                TagColor:LookUp(colTags,DisplayName="Yellow").BackgroundColor,
+                TagBorderColor:LookUp(colTags,DisplayName="Yellow").BackgroundColor,
+                selectable:false
+            },
+            {
+                id: "row7",
+                name: "Integer luctus mauris vehicula.",
+                review: "Review",
+                selectable:true
+            }
+        )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =24
+
+    lblExampleTitle_25 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =varTheme.palette.neutralPrimaryAlt
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =varTheme.fontSizes.m
+        Text: ="Layouts"
+        Width: =630
+        Y: =22
+        ZIndex: =2
+
+    line_17 As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =varTheme.palette.neutralTertiary
+        Height: =1
+        Width: =Parent.Width
+        Y: =68
+        ZIndex: =4
+
+    htmlCode_25 As htmlViewer:
+        AutoHeight: =true
+        BorderColor: =varTheme.palette.neutralPrimary
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        Color: =varTheme.palette.neutralPrimary
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Courier New'
+        Height: =115
+        HtmlText: |-
+            ="<pre class=""hljs"" style=""display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"">DetailsListLayout As CanvasComponent:
+                OnReset: |-
+                    =
+                    ClearCollect(
+                        colLayoutRows,
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row1""</span>,
+                            name: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""""</span>,
+                            heading: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Lorem ipsum dolor sit amet.""</span>,
+                            tag: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Custom Pages""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""""</span>,
+                            iconimage:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon:WebComponents""</span>,
+                            score:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Score 87%""</span>,
+                            TagColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Teal""</span>).BackgroundColor,
+                            TagBorderColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Teal""</span>).BackgroundColor,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row2""</span>,
+                            name: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Sed a sollicitudin nisi.""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review""</span>,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row3""</span>,
+                            name: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Suspendisse eu turpis a augue ullamcorper aliquam.""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review""</span>,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row4""</span>,
+                            heading: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Pellentesque pharetra lectus eget ligula maximus maximus.""</span>,
+                            tag: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Power App""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""""</span>,
+                            iconimage:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon:WebComponents""</span>,
+                            score:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Score 87%""</span>,
+                            TagColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Marigold""</span>).BackgroundColor,
+                            TagBorderColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Marigold""</span>).BackgroundColor,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row5""</span>,
+                            name: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Nunc non posuere leo.""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review""</span>,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row6""</span>,
+                            heading: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Fusce vitae nulla nec mi ultricies tempus.""</span>,
+                            tag: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Power App""</span>,
+                            iconimage: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""icon:WebComponents""</span>,
+                            score:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Score 87%""</span>,
+                            TagColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Yellow""</span>).BackgroundColor,
+                            TagBorderColor:LookUp(colTags,DisplayName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Yellow""</span>).BackgroundColor,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                        },
+                        {
+                            id: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""row7""</span>,
+                            name: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Integer luctus mauris vehicula.""</span>,
+                            review: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review""</span>,
+                            selectable:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>
+                        }
+                    )
+            
+                <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""FluentDetailsListLayout As 'Fluent Details List (0.0.13)'.pcfdataset""</span>:
+                    columns_Items: |-
+                        =With({
+                            <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// If there is a selection column, we remove the width and the padding</span>
+                            availableWidth:Self.Width,
+                            padding:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">32</span>,
+                            iconWidth:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">24</span>,
+                            reviewWidth:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">100</span>,
+                            scrollWidth:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">20</span>
+                            },
+                            Table(
+                                <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Main Columns</span>
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""iconimage""</span>,
+                                    ColCellType:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""image""</span>,
+                                    ColImageColor:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""blue""</span>,
+                                    ColVerticalAlign: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>,
+                                    ColHorizontalAlign: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>,
+                                    ColWidth:iconWidth
+                                },
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""heading""</span>,
+                                    ColDisplayName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Project Name""</span>,
+                                    ColWidth: availableWidth-iconWidth-padding-reviewWidth-padding-scrollWidth,
+                                    ColIsBold:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>,
+                                    ColRowHeader:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColHideWhenBlank:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColPaddingTop:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">0</span>,
+                                    ColVerticalAlign: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>,
+                                    ColMultiLine:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>
+                                },
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""review""</span>,
+                                    ColCellType:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""link""</span>,
+                                    ColHideWhenBlank:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColWidth:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">100</span>,
+                                    ColHorizontalAlign:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""right""</span>
+                                },
+                                <span class=""hljs-comment"" style=""color: rgb(136, 136, 136);"">// Sub text columns</span>
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""name""</span>,
+                                    ColShowAsSubTextOf:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""heading""</span>,
+                                    ColSubTextRow:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">0</span>,
+                                    ColPaddingLeft:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">30</span>,
+                                    ColHideWhenBlank:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColVerticalAlign: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>
+                                },
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""tag""</span>,
+                                    ColShowAsSubTextOf:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""heading""</span>,
+                                    ColCellType:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""tag""</span>,
+                                    ColTagColorColumn: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""TagColor""</span>,
+                                    ColTagBorderColorColumn: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""TagBorderColor""</span>,
+                                    ColSubTextRow:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">0</span>,
+                                    ColHideWhenBlank:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColHorizontalAlign:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>,
+                                    ColPaddingLeft:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">16</span>,
+                                    ColPaddingTop:<span class=""hljs-number"" style=""color: rgb(136, 0, 0);"">8</span>,
+                                    ColVerticalAlign: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""center""</span>
+                                },
+                                {
+                                    ColName: <span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""score""</span>,
+                                    ColShowAsSubTextOf:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""review""</span>,
+                                    ColCellType:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""tag""</span>,
+                                    ColHideWhenBlank:<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">true</span>,
+                                    ColHorizontalAlign:<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""right""</span>
+                                
+                                }
+                            )
+                        )
+                    Compact: =<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                    Items: =colLayoutRows
+                    OnChange: |-
+                        =If(Self.EventName=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""CellAction""</span> &amp;&amp; Self.EventColumn=<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""review""</span>,
+                            With({selectedItem:LookUp(colLayoutRows,id=Self.EventRowKey)},
+                                If(selectedItem.selectable,
+                                    Notify($<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review {selectedItem.name}""</span>);
+                                );
+                            );
+                        );
+                    OnSelect: |
+                        =
+                        If(Self.Selected.selectable,
+                            Notify($<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""Review {Self.Selected.name}""</span>);
+                        );
+                    RecordCanSelect: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""selectable""</span>
+                    RecordKey: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">""id""</span>
+                    SelectionType: =<span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">''</span><span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">'PowerCAT.FluentDetailsList.SelectionType'</span><span class=""hljs-string"" style=""color: rgb(136, 0, 0);"">''</span>.None
+                    SelectRowsOnFocus: =<span class=""hljs-literal"" style=""color: rgb(120, 169, 96);"">false</span>
+                    Theme: varTheme.themeJSON
+            </pre>"
+        Size: =10
+        Visible: =pivotAppCode_25.Selected.ItemKey="code"
+        Width: =Parent.Width
+        Y: =68
+        ZIndex: =5
+
+    Group22 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+

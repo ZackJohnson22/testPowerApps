@@ -1,0 +1,46 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": true,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "BestPractices",
+    "TemplateGuid": "17f7054e9d404fc1a16b29a1d52d8339"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Dos",
+      "Hidden": false,
+      "Name": "Dos",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "Dos",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"text\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Donts",
+      "Hidden": false,
+      "Name": "Donts",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "Donts",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"text\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "637987857045791889",
+  "Name": "17f7054e9d404fc1a16b29a1d52d8339",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "f47fcbd5380f4e4bb93226d0ae4b8319",
+  "Version": "637855819039471076"
+}

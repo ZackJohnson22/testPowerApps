@@ -1,0 +1,29 @@
+LeftNav As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =28
+
+    recNavBackground As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =varTheme.palette.white
+        Height: =Parent.Height
+        Width: =navMain.Width
+        ZIndex: =1
+
+    lblVersion As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =varTheme.palette.neutralQuaternary
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        Height: =20
+        Size: =8
+        Text: ="Version 0.0.20"
+        Width: =100
+        X: =Parent.Width-Self.Width
+        Y: =Parent.Height-Self.Height
+        ZIndex: =5
+
