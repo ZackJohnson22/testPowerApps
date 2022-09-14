@@ -209,7 +209,7 @@
         "Name": "txtSearchInput_1",
         "Parent": "SearchBox",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 104,
+        "PublishOrderIndex": 111,
         "Rules": [
           {
             "Category": "Data",
@@ -636,7 +636,7 @@
         "Name": "imgSearch_1",
         "Parent": "SearchBox",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 105,
+        "PublishOrderIndex": 112,
         "Rules": [
           {
             "Category": "Data",
