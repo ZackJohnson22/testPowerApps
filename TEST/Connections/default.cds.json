@@ -77,6 +77,14 @@
         "PCFExternalServiceUsageAllowed": false
       },
       "ComponentName": "CustomControl",
+      "Identifier": "cat_PowerCAT.Breadcrumb",
+      "IdentifierType": 0
+    },
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
       "Identifier": "cat_PowerCAT.CommandBar",
       "IdentifierType": 0
     },
@@ -142,14 +150,6 @@
       },
       "ComponentName": "CustomControl",
       "Identifier": "cat_PowerCAT.Calendar",
-      "IdentifierType": 0
-    },
-    {
-      "Capabilities": {
-        "PCFExternalServiceUsageAllowed": false
-      },
-      "ComponentName": "CustomControl",
-      "Identifier": "cat_PowerCAT.Breadcrumb",
       "IdentifierType": 0
     }
   ],
