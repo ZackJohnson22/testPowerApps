@@ -67,13 +67,15 @@
       "reverttooldpowerautomate": false,
       "rtlinstudiopreview": false,
       "rtlsupport": false,
+      "untypedobject": true,
       "usedisplaynamemetadata": true,
       "useenforcesavedatalimits": true,
       "useexperimentalcdsconnector": true,
       "useexperimentalsqlconnector": false,
       "useguiddatatypes": true,
       "usenonblockingonstartrule": true,
-      "webbarcodescanner": false
+      "webbarcodescanner": false,
+      "zeroalltabindexes": false
     },
     "Author": "Power Cat",
     "ContainsThirdPartyPcfControls": true,
